@@ -1168,7 +1168,7 @@ def _shift_operator_acc(gyr, acc, Ts, r):
     gyrdot = _gyrdot_fifth_order(gyr, Ts)
     centripetal = np.cross(gyr, np.cross(gyr, r))
     tangential = np.cross(gyrdot, r)
-    joint_center_acc = acc + centripetal + tangential
+    joint_center_acc = acc - centripetal - tangential
     return joint_center_acc
 
 
